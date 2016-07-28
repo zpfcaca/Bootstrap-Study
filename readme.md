@@ -108,8 +108,8 @@ $(selector).data():获取所有形如“data-*:value”。
 * 样式：col-xs-*(超小),col-sm-*（小）,col-md-*(中)，col-lg-*(大)。
 * 跨设备：组合多种样式一起使用   
 * 某些情况下为了解决排列问题需要使用清除样式：clearfix visible-*(这里*指定某些内容，例如visible-xs)   
-	  <div></div>
-	  
+
+
 ###Bootstrap的CSS设计思想
 
 CSS的设计思想：AO模式。A-Append（附加）；O-Overwrite(重写)。同名的样式，后面的样式覆盖前面的样式。
@@ -152,15 +152,14 @@ Bootstrap的CSS架构：
 21. 警告框：.alert。可以带一个关闭按钮，在按钮属性里添加data-dismiss="alert",
 如<button type="button" class="close" data-dismiss="alert">&times;</button>
 22. 进度条：.progress(进度条样式)和.progress-bar(进度条进度)。可以配置颜色，条纹。   
-23. 媒体对象：图片、视频、音频的组合。  嵌套表示：.media->.pull-right(.pull-left)->.media-object(媒体对象内容) 	              +.media-body->.media-heading。
-		
+23. 媒体对象：图片、视频、音频的组合。
+		嵌套表示：.media->.pull-right(.pull-left)->.media-object(媒体对象内容)+.media-body->.media-heading。
 	<div class="media">
 		<a class="pull-left" href="#">
 			<img class="media-object" src=... />
 		</a>
 		<div class="media-body">
 			<h4 class="media-heading">media heading</h4>
-
 			<!-- 嵌套的media对象-->
 			<div class="media"> </div>
 		</div>
@@ -199,44 +198,45 @@ Bootstrap的CSS架构：
 			$(this).tab('show');
 		});
 	});   
-提示框Tooltip：声明法data-toggle="tooltip"，data-oringinal-title="提示内容" 或title("提示内容")， 
+
+6. 提示框Tooltip：声明法data-toggle="tooltip"，data-oringinal-title="提示内容" 或title("提示内容")， 
 				JS：$(selector).tooltip(option)。使用之前需要激活（`必须`）：$(function () { $("[data-toggle='tooltip']").tooltip(); });  默认提示框向上弹出，data-placement="left":改变提示框位置
 				默认事件hover,focus
 	例子：
 
-弹出框popover:自定义属性data-toggle="popover",data-origin-title="...",data-content="..." 同提示框,默认click
+7. 弹出框popover:自定义属性data-toggle="popover",data-origin-title="...",data-content="..." 同提示框,默认click
 
-警告框：.alert alert-warning fade in;关闭按钮.close ,data-dismiss="alert"
-按钮：data-toggle="button"。input元素使用data-toggle="buttons"。按钮的自定义属性，这是data-toggle被data-**-text=""
-替代。   
+8. 警告框：.alert alert-warning fade in;关闭按钮.close ,data-dismiss="alert"  
 
-	<button type="button" id="btn1" class="btn btn-default" data-loading-text="正在加载...">获取内容</button>
+9. 按钮：data-toggle="button"。input元素使用data-toggle="buttons"。按钮的自定义属性，这是data-toggle被data-**-text=""
+替代。
+```<button type="button" id="btn1" class="btn btn-default" data-loading-text="正在加载...">获取内容</button>
 	//触发代码
 	$(function(){
 		$("#btn1").click(function(){
 			var btn=$(this);
 			btn.button('loading')
-
 		});
 	});
 	//或者直接调用
-	$("#btn1").button("loading");
-折叠collapse:一个触发按钮data-toggle="collapse",data-target="#id"。折叠区域.collapse in。实现手风琴效果，必须为
-触发按钮加上data-parent="#parent id"。
-轮播Carousel：   
+	$("#btn1").button("loading");   
+```  
+10. 折叠collapse:一个触发按钮data-toggle="collapse",data-target="#id"。折叠区域.collapse in。实现手风琴效果，必须为
+触发按钮加上data-parent="#parent id"。    
 
-	<div data-ride="carousel" class="carousel slide" id="carousel-container">
+11. 轮播Carousel：   
+```<div data-ride="carousel" class="carousel slide" id="carousel-container">
 		<!--图片容器-->
 		<div class="carousel-inner">
 			<div class="item">
-				<img alt="第一张" src="A"/>
+				<img alt="第一张" src=""/>
 				<div class="carousel-caption">
 					<h3>...</h3>
 					<p>.....</p>
 				</div>
 			<div>
 			<div class="item">
-				<img alt="第二张" src="B"/>
+				<img alt="第二张" src=""/>
 				<div class="carousel-caption">
 					<h3>...</h3>
 					<p>.....</p>
@@ -253,8 +253,9 @@ Bootstrap的CSS架构：
 			<span class="glyphicon glyphicon-chervon-left"></span></a>
 		<a data-slide="prev" href="#carousel-container" class="right carousel-control">
 			<span class="glyphicon glyphicon-chervon-right"></span></a>
-	</div>   
-	Affix:data-spy="affix" 位置属性data-offset="100"或data-offset-top="100"和data-offset-bottom="100"
+	</div>
+```
+12. Affix:data-spy="affix" 位置属性data-offset="100"或data-offset-top="100"和data-offset-bottom="100"
 
 
 
