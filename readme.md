@@ -154,7 +154,9 @@ Bootstrap的CSS架构：
 22. 进度条：.progress(进度条样式)和.progress-bar(进度条进度)。可以配置颜色，条纹。   
 23. 媒体对象：图片、视频、音频的组合。
 		嵌套表示：.media->.pull-right(.pull-left)->.media-object(媒体对象内容)+.media-body->.media-heading。
-	<div class="media">
+```
+
+ 	<div class="media">
 		<a class="pull-left" href="#">
 			<img class="media-object" src=... />
 		</a>
@@ -163,9 +165,9 @@ Bootstrap的CSS架构：
 			<!-- 嵌套的media对象-->
 			<div class="media"> </div>
 		</div>
-	</div>   
-
-24. 媒体列表：<ul class="media-list"><li class="media"></li></ul>
+ 	</div>   
+```
+24. 媒体列表：```<ul class="media-list"><li class="media"></li></ul>```   
 25. 列表组：.list-group和.list-group-item。定义颜色：.list-group-item-success(danger...)
 26. 自定义列表组：在列表组中加入.list-group-item-heading(头部)和.list-group-item-text（内容）。
 27. 面板：基础面板.panel;控制主体颜色.panel-default（primary...）;面板内容.panel-body。可以和表格，列表组一起使用。
@@ -183,7 +185,8 @@ Bootstrap的CSS架构：
 4. 滚动侦测：设置滚动容器（监测），菜单容器（滚动的内容），菜单内必须有.nav,li,a组合。JS：$('滚动容器').scrollspy({target：'#菜单容器'});   
 5. 选项卡tab：选项卡导航和选项卡面板同时有。在导航的选项内设置data-toggle="tab",并且设置data-target="选择符"
 或href="选择符"。选项卡面板父元素.tab-content,子元素与导航对应，含有.tab-pane,并且id=“选择符”： 
-	
+```	
+
 	<ul class="nav nav-tabs">
 		<li><a href="#home" data-toggle="tab">Home</a></li>
 		<li><a href="#profile" data-toggle="tab">Profile</a></li>
@@ -197,7 +200,8 @@ Bootstrap的CSS架构：
 		$(".nav a").click(function(){
 			$(this).tab('show');
 		});
-	});   
+	}); 
+```	  
 
 6. 提示框Tooltip：声明法data-toggle="tooltip"，data-oringinal-title="提示内容" 或title("提示内容")， 
 				JS：$(selector).tooltip(option)。使用之前需要激活（`必须`）：$(function () { $("[data-toggle='tooltip']").tooltip(); });  默认提示框向上弹出，data-placement="left":改变提示框位置
@@ -210,7 +214,8 @@ Bootstrap的CSS架构：
 
 9. 按钮：data-toggle="button"。input元素使用data-toggle="buttons"。按钮的自定义属性，这是data-toggle被data-**-text=""
 替代。
-```<button type="button" id="btn1" class="btn btn-default" data-loading-text="正在加载...">获取内容</button>
+```
+	<button type="button" id="btn1" class="btn btn-default" data-loading-text="正在加载...">获取内容</button>
 	//触发代码
 	$(function(){
 		$("#btn1").click(function(){
@@ -225,7 +230,9 @@ Bootstrap的CSS架构：
 触发按钮加上data-parent="#parent id"。    
 
 11. 轮播Carousel：   
-```<div data-ride="carousel" class="carousel slide" id="carousel-container">
+```
+
+	<div data-ride="carousel" class="carousel slide" id="carousel-container">
 		<!--图片容器-->
 		<div class="carousel-inner">
 			<div class="item">
